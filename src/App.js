@@ -8,6 +8,10 @@ import {Button} from "react-bootstrap";
 
 import Home from "./components/Pages/Home";
 import Login from "./components/Pages/Login";
+import Admin from "./components/Pages/Admin";
+import Instructor from "./components/Pages/Instructor";
+import Admin_Create from "./components/Pages/Admin_Create";
+
 
 class App extends Component {
   render() {
@@ -15,7 +19,7 @@ class App extends Component {
       <Router>
       <div> 
         <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Navbar.Brand href="#home">SIIS System</Navbar.Brand>
     <Nav className="mr-auto">
         <Nav.Link  href="/">Home</Nav.Link>
       <Nav.Link  href="/Login">Admin</Nav.Link>
@@ -33,7 +37,9 @@ class App extends Component {
             
           <Route path="/" exact component={Home} />
           <Route path="/Login" exact component={Login} /> 
-          
+          <Route path="/Admin" exact component={Admin} /> 
+          <Route path="/Instructor" exact component={Instructor} /> 
+          <Route path="/Admin_Create" exact component={Admin_Create} />
         
         </Router>
       

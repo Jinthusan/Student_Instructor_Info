@@ -6,85 +6,68 @@ import boat from './boatt.jpg';
 import book from './book.jpg';
 import globe from './globe.jpg';
 import Art from './Art.jpg';
-import {Card} from 'react-bootstrap';
-import {CardDeck} from 'react-bootstrap';
 
-
-
-
-const Styles = styled.div`
-    .jumbotron{
-        background: url(${boat}) no-repeat fixed bottom;
-        background-size: cover;
-        height: 150px;
-    }
-
-`
-;
-
- 
+import {Carousel} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 export default class Home extends Component {
     render() {
         return (
     <div>
-  <Styles>
-  <Jumbotron  className="jumbotron">
-  <div style={{color:'Silver'}}>
- <Container>
-  <h1>Welcome!</h1>
-  <h4 style={{color:"White"}}>
-  Student & Instructor Information System
-  </h4>
-  </Container>
+  <Jumbotron style={{marginTop:"10px", backgroundColor: "#edfff3", marginLeft: "5px",marginRight: "5px"}}>
+    <div>
+  <h1>Welcome, SIIS!</h1>
+  <p>
+    This is a simple hero unit, a simple jumbotron-style component for calling
+    extra attention to featured content or information.
+  </p>
+  <p>
+    <Button variant="primary">Learn more</Button>
+  </p>
   </div>
 </Jumbotron>
-</Styles>
+<Carousel style={{width:"3000px"}} className="container">
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={book}
+      alt="First slide"
+      style={{height:"700px"}}
+    />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={globe}
+      alt="Third slide"
+      style={{height:"700px"}}
+    />
 
-<CardDeck >
-  <Card>
-    <Card.Img variant="top" src={Art} style={{height:"285px"}} />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src={book} />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src={globe} style={{height:"285px"}}/>
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-</CardDeck>
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={Art}
+      alt="Third slide"
+      style={{height:"700px"}}
+    />
+
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
 <br/>
-<Jumbotron fluid>
+<Jumbotron style={{marginLeft: "5px",marginRight: "5px"}}>
   <Container>
   
     <p className="container">

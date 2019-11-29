@@ -36,7 +36,7 @@ export default class Login extends Component {
           </Jumbotron>
           </Styles>
 
-          <form className='container'>
+          <form className='container' style={{marginTop:"60px",borderRadius:"10px",backgroundColor: "#edfff3", marginLeft: "120px",marginRight: "1000px"}}>
                 <h3>Sign In</h3>
 
                 <div className="form-group">
@@ -56,7 +56,7 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <Link to={"/Instructor"} type="submit" className="btn btn-primary btn-block">Submit</Link>
+                <Link to={"/Admin"} type="submit" className="btn btn-primary btn-block">Submit</Link>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
