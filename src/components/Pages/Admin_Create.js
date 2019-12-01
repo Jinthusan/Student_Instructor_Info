@@ -6,44 +6,60 @@ export default class Instructor extends Component {
     constructor(props){
         super(props);
     
-        this.onChangeCreate=this.onChangeCreate.bind(this);
+        this.onChangefName=this.onChangefName.bind(this);
+        this.onChangelName=this.onChangelName.bind(this);
+        this.onChangeemail=this.onChangeemail.bind(this);
+        this.onChangepassword=this.onChangepassword.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     
         this.state = {
           fName:'',
-          fNameError:''
+          lName:'',
+          email:'',
+          password:''
         }
       }
     
-      onChangeCreate(e){
+      onChangefName(e){
         this.setState({
           fName: e.target.value
         });
       }
-    
-      validate(e){
-        let fNameError='';
-    
-        if(!this.state.fName){ 
-          fNameError= "Name Cannot be empty";
-        }
-    
-        if(fNameError){
-          this.setState({fNameError});
-          return false;
-        }
-        return true;
+
+      onChangelName(e){
+        this.setState({
+          lName: e.target.value
+        });
       }
+    
+          onChangeemail(e){
+            this.setState({
+              email: e.target.value
+            });
+          }
+
+            onChangepassword(e){
+              this.setState({
+                password: e.target.value
+              }); 
+            }
     
       onSubmit(e){
         e.preventDefault();
-         const isValid = this.validate();
-         if(isValid){
-           console.log(this.state); 
-         } 
-    
+      
+        console.log(`Form submitted:`);
+        console.log(`fName: ${this.state.fName}`);
+        console.log(`lName: ${this.state.lName}`);
+        console.log(`email: ${this.state.email}`);
+        console.log(`password: ${this.state.password}`);
+         
+         
         
         this.setState({
-          fName:''
+          fName:'',
+          lName:'',
+          email:'',
+          password:''
         })
       }
 
@@ -55,28 +71,30 @@ export default class Instructor extends Component {
 
           <div className="form-group">
               <label>First name</label>
-              <input type="text" className="form-control" placeholder="First name" value={this.fName} onChange={this.onChangeCreate} />
-              {this.state.fNameError ? (
-          <div style={{fontSize:12,color:"red"}}>
-            {this.state.fNameError}
-          </div>
-          ): null}
+              <input 
+              type="text" 
+              className="form-control" 
+              placeholder="First name"
+              value={this.state.fName}
+              onChange={this.onChangefName} />
           </div>
           
-
           <div className="form-group">
               <label>Last name</label>
-              <input type="text" className="form-control" placeholder="Last name" />
+              <input type="text" className="form-control" placeholder="Last name" value={this.state.lName}
+              onChange={this.onChangelName}/>
           </div>
 
           <div className="form-group">
               <label>Email address</label>
-              <input type="email" className="form-control" placeholder="Enter email" />
+              <input type="email" className="form-control" placeholder="Enter email" value={this.state.email}
+              onChange={this.onChangeemail}/>
           </div>
 
           <div className="form-group">
               <label>Password</label>
-              <input type="password" className="form-control" placeholder="Enter password" />
+              <input type="password" className="form-control" placeholder="Enter password" value={this.state.password}
+              onChange={this.onChangepassword} />
           </div>
 
           <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
